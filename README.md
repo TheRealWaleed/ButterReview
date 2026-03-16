@@ -1,10 +1,20 @@
-# 🔍 cr — AI Code Review CLI
+# 🧈 ButterReview — Smooth Code Reviews
+
+<p align="center">
+  <img src="assets/robot.png" alt="ButterReview Robot" width="400" />
+</p>
+
+<p align="center">
+  <em>"What is my purpose?" — "You review code." — "Oh my god."</em>
+</p>
+
+---
 
 Paste a GitHub PR or GitLab MR link, get an AI-powered code review posted under **your name** — using the Claude CLI installed on your machine.
 
 ```
   ╭──────────────────────────────────────────────────────────╮
-  │                   🔍 cr — AI Code Review                 │
+  │            🧈 ButterReview — Smooth Code Reviews         │
   ╰──────────────────────────────────────────────────────────╯
 
   Paste a GitHub PR or GitLab MR link (or q to quit)
@@ -57,8 +67,8 @@ Paste a GitHub PR or GitLab MR link, get an AI-powered code review posted under 
 
 ```bash
 # Clone and install
-git clone https://github.com/TheRealWaleed/cr.git
-cd cr
+git clone https://github.com/TheRealWaleed/butter-review.git
+cd butter-review
 pnpm install
 
 # Build and link globally
@@ -66,17 +76,17 @@ pnpm build
 npm link
 ```
 
-Now you can use `cr` from anywhere.
+Now you can use `butter-review` from anywhere.
 
 ## Usage
 
 ### Interactive mode (recommended)
 
-Just run `cr` with no arguments. It will prompt you for a URL, run the review, then ask for the next one:
+Just run `butter-review` with no arguments. It will prompt you for a URL, run the review, then ask for the next one:
 
 ```bash
 export GITHUB_TOKEN=ghp_...   # or GITLAB_TOKEN=glpat-...
-cr
+butter-review
 ```
 
 Type `q` to quit.
@@ -86,9 +96,9 @@ Type `q` to quit.
 Pass a URL as argument to review once and exit (useful for CI/scripts):
 
 ```bash
-cr https://github.com/owner/repo/pull/123
-cr https://gitlab.com/group/project/-/merge_requests/42
-cr https://git.company.com/team/project/-/merge_requests/99
+butter-review https://github.com/owner/repo/pull/123
+butter-review https://gitlab.com/group/project/-/merge_requests/42
+butter-review https://git.company.com/team/project/-/merge_requests/99
 ```
 
 ## Interactive Review
@@ -130,7 +140,7 @@ Tokens can be set via environment variables or a config file.
 
 ### Config File
 
-Create `~/.cr.json` as an alternative to env vars:
+Create `~/.butter-review.json` as an alternative to env vars:
 
 ```json
 {

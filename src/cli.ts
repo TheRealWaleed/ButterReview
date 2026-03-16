@@ -8,6 +8,7 @@ import { GitLabPlatformClient } from "./clients/gitlab.platform.js";
 import { analyzeMergeRequest, postReviewResults } from "./services/review.service.js";
 import { reviewComments, reviewSummary, promptUrl } from "./interactive.js";
 import * as ui from "./ui.js";
+import { welcome } from "./welcome.js";
 
 async function main(): Promise<void> {
   const arg = process.argv[2];
@@ -17,7 +18,7 @@ async function main(): Promise<void> {
     process.exit(0);
   }
 
-  ui.banner();
+  await welcome();
 
   const config = loadConfig();
 
@@ -60,7 +61,7 @@ async function processReview(url: string, config: Config): Promise<number> {
   if (parsed.platform === "github") {
     if (!config.githubToken) {
       ui.fail("GITHUB_TOKEN is required for GitHub PRs.");
-      ui.info("Set it via environment variable or ~/.cr.json");
+      ui.info("Set it via environment variable or ~/.butter-review.json");
       return 1;
     }
 
@@ -77,7 +78,7 @@ async function processReview(url: string, config: Config): Promise<number> {
 
     if (!config.gitlabToken) {
       ui.fail("GITLAB_TOKEN is required for GitLab MRs.");
-      ui.info("Set it via environment variable or ~/.cr.json");
+      ui.info("Set it via environment variable or ~/.butter-review.json");
       return 1;
     }
 

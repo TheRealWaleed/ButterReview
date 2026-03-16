@@ -47,7 +47,7 @@ function readKey(prompt: string, validKeys: string[]): Promise<string> {
 
 function openInEditor(content: string): string | null {
   const editor = process.env.EDITOR || process.env.VISUAL || "vi";
-  const tmpFile = join(tmpdir(), `cr-comment-${Date.now()}.md`);
+  const tmpFile = join(tmpdir(), `butter-review-${Date.now()}.md`);
 
   writeFileSync(tmpFile, content, "utf-8");
 

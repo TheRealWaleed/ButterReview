@@ -32,9 +32,9 @@ const WIDTH = 60;
 // ── Banner ───────────────────────────────────────────────────────────────────
 
 export function banner(): void {
-  const inner = `  \u{1F50D} ${pc.bold("cr")} ${pc.dim("\u2014 AI Code Review")}  `;
+  const inner = `  \u{1F9C8} ${pc.bold("ButterReview")} ${pc.dim("\u2014 Smooth Code Reviews")}  `;
   // Approximate visible length (strip ANSI for measurement)
-  const visLen = 24;
+  const visLen = 38;
   const pad = Math.max(0, WIDTH - 2 - visLen);
   const left = Math.floor(pad / 2);
   const right = pad - left;
@@ -208,12 +208,12 @@ export function waitingForUrl(): void {
 export function help(): void {
   banner();
   console.log(`  ${pc.bold("Usage:")}`);
-  console.log(`    ${pc.green("cr")}                  ${pc.dim("Interactive mode (recommended)")}`);
-  console.log(`    ${pc.green("cr")} ${pc.dim("<url>")}            ${pc.dim("Review a single MR/PR and exit")}`);
+  console.log(`    ${pc.green("butter-review")}             ${pc.dim("Interactive mode (recommended)")}`);
+  console.log(`    ${pc.green("butter-review")} ${pc.dim("<url>")}   ${pc.dim("Review a single MR/PR and exit")}`);
   console.log("");
   console.log(`  ${pc.bold("Examples:")}`);
-  console.log(`    ${pc.green("cr")} https://github.com/owner/repo/pull/123`);
-  console.log(`    ${pc.green("cr")} https://gitlab.com/group/project/-/merge_requests/42`);
+  console.log(`    ${pc.green("butter-review")} https://github.com/owner/repo/pull/123`);
+  console.log(`    ${pc.green("butter-review")} https://gitlab.com/group/project/-/merge_requests/42`);
   console.log("");
   console.log(`  ${pc.bold("Environment:")}`);
   console.log(`    ${pc.cyan("GITHUB_TOKEN")}   GitHub personal access token`);
@@ -221,7 +221,7 @@ export function help(): void {
   console.log(`    ${pc.cyan("GITLAB_URL")}     GitLab instance URL ${pc.dim("(default: https://gitlab.com)")}`);
   console.log("");
   console.log(`  ${pc.bold("Config file")} ${pc.dim("(optional)")}:`);
-  console.log(`    ${pc.dim("~/.cr.json")}     { "githubToken": "...", "gitlabToken": "...", "gitlabUrl": "..." }`);
+  console.log(`    ${pc.dim("~/.butter-review.json")}   { "githubToken": "...", "gitlabToken": "...", "gitlabUrl": "..." }`);
   console.log("");
 }
 

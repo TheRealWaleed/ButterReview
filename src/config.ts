@@ -10,7 +10,7 @@ export interface Config {
 
 function loadConfigFile(): Partial<Config> {
   try {
-    const raw = readFileSync(join(homedir(), ".cr.json"), "utf-8");
+    const raw = readFileSync(join(homedir(), ".butter-review.json"), "utf-8");
     const parsed = JSON.parse(raw) as Record<string, unknown>;
     return {
       githubToken: typeof parsed.githubToken === "string" ? parsed.githubToken : undefined,
