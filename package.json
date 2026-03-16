@@ -1,0 +1,27 @@
+{
+  "name": "cr",
+  "version": "1.0.0",
+  "description": "CLI code review tool — paste a MR/PR link, get an AI review posted under your name",
+  "type": "module",
+  "bin": {
+    "cr": "dist/cli.js"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "tsx src/cli.ts",
+    "build": "tsc",
+    "start": "node dist/cli.js"
+  },
+  "dependencies": {
+    "@octokit/rest": "^22.0.1",
+    "picocolors": "^1.1.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.7.0"
+  }
+}
